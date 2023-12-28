@@ -1,15 +1,29 @@
-<!-- app/templates/result.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analysis Result</title>
+  <meta charset="UTF-8">
+  <title>Sentiment Analysis</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    #result-container {
+      margin-top: 20px;
+    }
+
+    .result-label {
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
+  <div id="result-container">
     <h1>Analysis Result</h1>
-    <p>User Input: {{ user_input }}</p>
-    <p>Sentiment: {{ sentiment }}</p>
+    <p class="result-label"><strong>User Input:</strong> {{ user_input }}</p>
+    <p class="result-label"><strong>Sentiment:</strong> {{ sentiment }}</p>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
